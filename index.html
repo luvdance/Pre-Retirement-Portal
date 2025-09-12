@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retirement Workshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold" href="#">
+      <img src="assets/logo.png" alt="Logo" height="32">
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#" onclick="loadPage('home.html')">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="loadPage('contact-us.html')">Contact us</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown">
+            Resources
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Guides</a></li>
+            <li><a class="dropdown-item" href="#">Articles</a></li>
+            <li><a class="dropdown-item" href="#faq">FAQs</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right -->
+      <div class="d-flex">
+        <a href="user.html" class="btn btn-outline-primary me-2">Login</a>
+        <a href="user.html#register-form" class="btn btn-primary">Register</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Loader -->
+<div id="loader" class="loader-overlay d-flex align-items-center justify-content-center">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<main id="main-content"></main>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- Logo and Subscribe -->
+      <div class="col-md-4">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Logo" class="footer-logo">
+          <h4 class="mt-2">Pre-Retirement Academy</h4>
+        </div>
+        <form class="subscribe-form mt-3">
+          <label for="subscribe-email" class="form-label">Subscribe to our newsletter</label>
+          <div class="input-group">
+            <input type="email" id="subscribe-email" class="form-control" placeholder="Enter your email">
+            <button type="submit" class="btn btn-orange">Subscribe</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Navigation Columns -->
+      <div class="col-md-4">
+        <div class="row">
+          <div class="col-6">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h5 class="footer-heading">Resources</h5>
+            <ul class="footer-links">
+              <li><a href="#">Workshops</a></li>
+              <li><a href="#">Enrollment</a></li>
+              <li><a href="#">Payments</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-md-4">
+        <h5 class="footer-heading">Follow Us</h5>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom d-flex justify-content-between align-items-center mt-4">
+      <p class="mb-0">© 2025 Retirement Corp. All Rights Reserved.</p>
+      <div class="footer-policies">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
