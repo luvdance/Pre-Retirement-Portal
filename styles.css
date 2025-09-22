@@ -1432,19 +1432,11 @@ margin: 0 auto;
 }
 
 /* Make spinner visible inside orange buttons */
-.btn-orange:focus .spinner-border,
-.btn-orange:disabled .spinner-border {
-  color: #fff !important; /* keep spinner white on orange bg */
-}
-
 .btn-orange:focus {
   background-color: #ff6600 !important;  /* prevent turning white */
   border-color: #ff6600 !important;
   color: #fff !important;
 }
 
-/* Alternative: Orange spinner on focus */
-.btn-orange:focus .spinner-border {
-  color: #ff6600 !important; /* spinner turns orange */
-}
+
 
