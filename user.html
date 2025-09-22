@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,6 @@
   <title>Retirement Workshop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/logo.png" type="image/x-icon">
   <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -30,7 +28,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Left -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="index.html" onclick="loadPage('home.html')">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
         <li class="nav-item"><a class="nav-link" href="/#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact us</a></li>
@@ -54,6 +52,7 @@
     </div>
   </div>
 </header>
+
 <!-- Loader -->
 <div id="loader" class="loader-overlay d-flex align-items-center justify-content-center">
   <div class="spinner-border text-primary" role="status">
@@ -75,44 +74,63 @@
     </div>
 
     <!-- Right Section -->
-    <div class="auth-right">
-      <div class="auth-card">
-        <!-- Login Form -->
-        <div id="login-form">
-          <h3>Login</h3>
-          <form>
-            <input type="email" class="form-control" placeholder="Email Address" required>
-            <input type="password" class="form-control" placeholder="Password" required>
-            <button type="submit" class="btn btn-orange">Login</button>
-          </form>
-          <div class="text-center mt-3">
-            <a href="#" class="text-muted">Forgot Password?</a> <br>
-            <span>Don't have an account? <a class="toggle-link" onclick="showRegister()">Register</a></span>
-          </div>
-        </div>
+<div class="auth-right">
+  <div class="auth-card">
 
-        <!-- Register Form -->
-        <div id="register-form" class="d-none">
-          <h3>Register</h3>
-          <form>
-            <input type="text" class="form-control" placeholder="Full Name" required>
-            <input type="text" class="form-control" placeholder="Employee ID" required>
-            <input type="text" class="form-control" placeholder="Ministry/Department" required>
-            <input type="text" class="form-control" placeholder="Rank" required>
-            <input type="text" class="form-control" placeholder="Years to Retirement / Retired" required>
-            <input type="email" class="form-control" placeholder="Email Address" required>
-            <input type="tel" class="form-control" placeholder="Phone Number" required>
-            <input type="password" class="form-control" placeholder="Password" required>
-            <button type="submit" class="btn btn-orange">Register</button>
-          </form>
-          <div class="text-center mt-3">
-            <span>Already have an account? <a class="toggle-link" onclick="showLogin()">Login</a></span>
-          </div>
-        </div>
+    <!-- Login Form -->
+    <div id="login-form">
+      <h3>Login</h3>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" class="form-control" placeholder="Email Address" required>
+        <input type="password" id="loginPassword" class="form-control" placeholder="Password" required>
+        <button type="submit" class="btn btn-orange">Login</button>
+      </form>
+      <div class="text-center mt-3">
+        <a onclick="showForgotPasswordForm()" class="text-muted">Forgot Password?</a> <br>
+        <span>Don't have an account? <a class="toggle-link" onclick="showRegister()">Register</a></span>
       </div>
     </div>
+
+    <!-- Register Form -->
+    <div id="register-form" class="d-none">
+      <h3>Register</h3>
+      <form id="registerForm">
+        <input type="text" id="fullName" class="form-control mb-2" placeholder="Full Name" required>
+        <input type="text" id="employeeId" class="form-control mb-2" placeholder="Employee ID" required>
+        <input type="text" id="department" class="form-control mb-2" placeholder="Ministry/Department" required>
+        <input type="text" id="rank" class="form-control mb-2" placeholder="Rank" required>
+        <input type="text" id="years" class="form-control mb-2" placeholder="Years to Retirement / Retired" required>
+        <input type="email" id="registerEmail" class="form-control mb-2" placeholder="Email Address" required>
+        <input type="tel" id="phone" class="form-control mb-2" placeholder="Phone Number" required>
+        <input type="password" id="registerPassword" class="form-control mb-2" placeholder="Password" required>
+        <input type="password" id="confirmPassword" class="form-control mb-3" placeholder="Confirm Password" required>
+        <button type="submit" class="btn btn-orange w-100">Register</button>
+      </form>
+      <div class="text-center mt-3">
+        <span>Already have an account? 
+          <a class="toggle-link" onclick="showLogin()">Login</a>
+        </span>
+      </div>
+    </div>
+
+    <!-- Forgot Password Form -->
+    <div id="forgot-password-form" class="d-none">
+      <h3>Reset Password</h3>
+      <div id="password-reset-message" class="alert d-none"></div>
+      <form id="forgotPasswordForm">
+        <input type="email" id="forgotEmail" class="form-control" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-orange">Send Reset Link</button>
+      </form>
+      <div class="text-center mt-3">
+        <span><a class="toggle-link" href="user.html">Back to Login</a></span>
+      </div>
+    </div>
+
   </div>
+</div>
+
 </section>
+
 <!-- Footer Section -->
 <footer class="footer">
   <div class="container">
@@ -181,9 +199,177 @@
     </div>
   </div>
 </footer>
-
 <script src="scripts.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+  // Import Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    sendPasswordResetEmail
+  } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+  import {
+    getFunctions,
+    httpsCallable
+  } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-functions.js";
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyC8LEVkxZy6O0wQRyiAAV1Mcou3hBKLWck",
+    authDomain: "pre-retirement-academy.firebaseapp.com",
+    projectId: "pre-retirement-academy",
+    storageBucket: "pre-retirement-academy.firebasestorage.app",
+    messagingSenderId: "602910339082",
+    appId: "1:602910339082:web:32cdc2fb290bdbb1ff6ff3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+  const functions = getFunctions(app);
+
+  const registerUser = httpsCallable(functions, 'registerUser');
+
+  let isRegistering = false;
+
+  function showLoader(btn, isLoading, text = "Processing...") {
+    if (isLoading) {
+      btn.disabled = true;
+      btn.dataset.originalText = btn.innerHTML;
+      btn.innerHTML = `<span class="spinner-border spinner-border-sm text-light"></span> ${text}`;
+    } else {
+      btn.disabled = false;
+      if (btn.dataset.originalText) {
+        btn.innerHTML = btn.dataset.originalText;
+        delete btn.dataset.originalText;
+      }
+    }
+  }
+
+  function showForm(formId) {
+    const formIds = ['login-form', 'register-form', 'forgot-password-form'];
+    formIds.forEach(id => {
+      const formDiv = document.getElementById(id);
+      if (formDiv) {
+        if (id === formId) {
+          formDiv.classList.remove('d-none');
+        } else {
+          formDiv.classList.add('d-none');
+        }
+      }
+    });
+  }
+
+  window.showLogin = () => showForm('login-form');
+  window.showRegister = () => showForm('register-form');
+  window.showForgotPasswordForm = () => showForm('forgot-password-form');
+
+  // Handle Registration via Cloud Function
+  document.getElementById("registerForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    isRegistering = true;
+    const btn = e.target.querySelector("button[type='submit']");
+    showLoader(btn, true, "Registering...");
+
+    const email = document.getElementById("registerEmail").value.trim();
+    const password = document.getElementById("registerPassword").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+    const fullName = document.getElementById("fullName").value.trim();
+    const employeeId = document.getElementById("employeeId").value.trim();
+    const department = document.getElementById("department").value.trim();
+    const rank = document.getElementById("rank").value.trim();
+    const yearsToRetirement = document.getElementById("years").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      showLoader(btn, false);
+      isRegistering = false;
+      return;
+    }
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters!");
+      showLoader(btn, false);
+      isRegistering = false;
+      return;
+    }
+
+    try {
+      const result = await registerUser({
+        email,
+        password,
+        fullName,
+        employeeId,
+        department,
+        rank,
+        yearsToRetirement,
+        phone,
+      });
+
+      console.log(result.data.result);
+      alert("Registration successful! Please proceed to login.");
+      showForm('login-form');
+
+    } catch (error) {
+      console.error("Registration failed:", error);
+      alert(error.message);
+    } finally {
+      isRegistering = false;
+      showLoader(btn, false);
+    }
+  });
+
+  // Handle Login
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector("button[type='submit']");
+    showLoader(btn, true, "Signing in...");
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      window.location.href = "dashboard.html";
+    } catch (error) {
+      console.error("Login failed:", error);
+      alert(error.message);
+    } finally {
+      showLoader(btn, false);
+    }
+  });
+
+  // Handle Forgot Password
+  document.getElementById("forgotPasswordForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector("button[type='submit']");
+    showLoader(btn, true, "Sending...");
+
+    const email = document.getElementById("forgotEmail").value.trim();
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert("Password reset link sent to your email.");
+      showForm('login-form');
+    } catch (error) {
+      console.error("Password reset failed:", error);
+      alert(error.message);
+    } finally {
+      showLoader(btn, false);
+    }
+  });
+
+  // Auto redirect if already logged in
+  onAuthStateChanged(auth, (user) => {
+    if (user && !isRegistering) {
+      window.location.href = "dashboard.html";
+    }
+  });
+</script>
 </body>
 </html>
-
