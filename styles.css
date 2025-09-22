@@ -1294,6 +1294,7 @@ margin: 0 auto;
   position: relative;
   pointer-events: none;
   opacity: 0.8;
+  color: #ff6600;
 }
 
 .btn-loading::after {
@@ -1429,3 +1430,4 @@ margin: 0 auto;
     color: #fff;
   }
 }
+
