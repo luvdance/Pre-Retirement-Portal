@@ -1432,11 +1432,21 @@ margin: 0 auto;
 }
 
 /* Make spinner visible inside orange buttons */
-.btn-orange:focus {
-  background-color: #ff6600 !important;  /* prevent turning white */
-  border-color: #ff6600 !important;
-  color: #fff !important;
+/* Default spinner inside orange button */
+.btn-orange .spinner-border {
+  width: 1rem;
+  height: 1rem;
+  color: #ff6600 !important; /* make spinner orange */
 }
+
+/* Keep button text visible */
+.btn-orange:disabled {
+  background-color: #fff !important;   /* stays white when disabled */
+  border-color: #ff6600 !important;
+  color: #ff6600 !important;
+}
+
+
 
 
 
