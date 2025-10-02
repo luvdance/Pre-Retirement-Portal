@@ -2215,21 +2215,22 @@ document.addEventListener("click", (e) => {
   modulesContent.style.display = "block";
 
   // ===== Load course-specific content dynamically =====
-  modulesContent.innerHTML = `
+  // ===== Load course-specific content dynamically =====
+modulesContent.innerHTML = `
+
+  <!-- ========== Module 1 ========== -->
   <div class="card p-3 mb-3 shadow-sm">
     <h6 class="fw-semibold">${courseName} - Module 1</h6>
-    <p class="small text-muted">Here is your learning material.</p>
+    <p class="small text-muted">Introduction to Retirement Planning.</p>
 
-    <!-- YouTube Video -->
     <div class="ratio ratio-16x9 mb-3">
       <iframe 
         src="https://www.youtube.com/embed/1LNYBRDKrNU" 
-        title="YouTube video"
+        title="Module 1 Video"
         allowfullscreen>
       </iframe>
     </div>
 
-    <!-- Question 1 -->
     <div class="mb-3">
       <p><strong>Q1:</strong> What is the main purpose of retirement planning?</p>
       <button class="btn btn-outline-primary btn-sm">To ensure financial stability after active work life</button>
@@ -2237,7 +2238,6 @@ document.addEventListener("click", (e) => {
       <button class="btn btn-outline-primary btn-sm">To avoid paying taxes</button>
     </div>
 
-    <!-- Question 2 -->
     <div class="mb-3">
       <p><strong>Q2:</strong> Which of the following is considered a safe investment option for retirees?</p>
       <button class="btn btn-outline-primary btn-sm">High-risk crypto trading</button>
@@ -2245,7 +2245,6 @@ document.addEventListener("click", (e) => {
       <button class="btn btn-outline-primary btn-sm">Unverified Ponzi schemes</button>
     </div>
 
-    <!-- Question 3 -->
     <div class="mb-3">
       <p><strong>Q3:</strong> Why is diversification important in investment?</p>
       <button class="btn btn-outline-primary btn-sm">To reduce risk exposure</button>
@@ -2253,7 +2252,6 @@ document.addEventListener("click", (e) => {
       <button class="btn btn-outline-primary btn-sm">To only invest in real estate</button>
     </div>
 
-    <!-- Question 4 -->
     <div class="mb-3">
       <p><strong>Q4:</strong> What should be considered when planning for long-term wealth growth?</p>
       <button class="btn btn-outline-primary btn-sm">Time horizon & inflation</button>
@@ -2261,6 +2259,136 @@ document.addEventListener("click", (e) => {
       <button class="btn btn-outline-primary btn-sm">Ignoring financial goals</button>
     </div>
   </div>
+
+
+  <!-- ========== Module 2 ========== -->
+  <div class="card p-3 mb-3 shadow-sm">
+    <h6 class="fw-semibold">${courseName} - Module 2</h6>
+    <p class="small text-muted">Investment Basics for Retirement.</p>
+
+    <div class="ratio ratio-16x9 mb-3">
+      <iframe 
+        src="https://www.youtube.com/embed/Tu9iR5h4C7o" 
+        title="Module 2 Video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q1:</strong> What type of investment is best for long-term growth?</p>
+      <button class="btn btn-outline-primary btn-sm">Stocks & mutual funds</button>
+      <button class="btn btn-outline-primary btn-sm">Lottery tickets</button>
+      <button class="btn btn-outline-primary btn-sm">High-interest loans</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q2:</strong> Which factor affects compound interest the most?</p>
+      <button class="btn btn-outline-primary btn-sm">Time invested</button>
+      <button class="btn btn-outline-primary btn-sm">Impulse spending</button>
+      <button class="btn btn-outline-primary btn-sm">Random luck</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q3:</strong> Why should retirees avoid high-risk investments?</p>
+      <button class="btn btn-outline-primary btn-sm">They have limited recovery time</button>
+      <button class="btn btn-outline-primary btn-sm">They enjoy gambling</button>
+      <button class="btn btn-outline-primary btn-sm">They don’t like money</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q4:</strong> Which is a good strategy for retirement planning?</p>
+      <button class="btn btn-outline-primary btn-sm">Diversify portfolio</button>
+      <button class="btn btn-outline-primary btn-sm">Invest in one asset only</button>
+      <button class="btn btn-outline-primary btn-sm">Spend everything quickly</button>
+    </div>
+  </div>
+
+
+  <!-- ========== Module 3 ========== -->
+  <div class="card p-3 mb-3 shadow-sm">
+    <h6 class="fw-semibold">${courseName} - Module 3</h6>
+    <p class="small text-muted">Health & Lifestyle in Retirement.</p>
+
+    <div class="ratio ratio-16x9 mb-3">
+      <iframe 
+        src="https://www.youtube.com/embed/v7AYKMP6rOE" 
+        title="Module 3 Video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q1:</strong> Why is healthcare planning important in retirement?</p>
+      <button class="btn btn-outline-primary btn-sm">Medical costs increase with age</button>
+      <button class="btn btn-outline-primary btn-sm">Because it’s optional</button>
+      <button class="btn btn-outline-primary btn-sm">To buy gym equipment</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q2:</strong> Which habit improves longevity?</p>
+      <button class="btn btn-outline-primary btn-sm">Regular exercise</button>
+      <button class="btn btn-outline-primary btn-sm">Smoking & drinking</button>
+      <button class="btn btn-outline-primary btn-sm">Skipping meals</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q3:</strong> What role does diet play in retirement health?</p>
+      <button class="btn btn-outline-primary btn-sm">Supports physical and mental well-being</button>
+      <button class="btn btn-outline-primary btn-sm">No role at all</button>
+      <button class="btn btn-outline-primary btn-sm">Only helps athletes</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q4:</strong> Which insurance is most crucial post-retirement?</p>
+      <button class="btn btn-outline-primary btn-sm">Health insurance</button>
+      <button class="btn btn-outline-primary btn-sm">Car insurance only</button>
+      <button class="btn btn-outline-primary btn-sm">Lottery insurance</button>
+    </div>
+  </div>
+
+
+  <!-- ========== Module 4 ========== -->
+  <div class="card p-3 mb-3 shadow-sm">
+    <h6 class="fw-semibold">${courseName} - Module 4</h6>
+    <p class="small text-muted">Final Review & Wealth Transfer.</p>
+
+    <div class="ratio ratio-16x9 mb-3">
+      <iframe 
+        src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+        title="Module 4 Video"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q1:</strong> What is estate planning?</p>
+      <button class="btn btn-outline-primary btn-sm">Managing wealth transfer after death</button>
+      <button class="btn btn-outline-primary btn-sm">Throwing a big party</button>
+      <button class="btn btn-outline-primary btn-sm">Avoiding retirement altogether</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q2:</strong> Why is a will important?</p>
+      <button class="btn btn-outline-primary btn-sm">Ensures assets are distributed as intended</button>
+      <button class="btn btn-outline-primary btn-sm">It isn’t important</button>
+      <button class="btn btn-outline-primary btn-sm">To confuse family members</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q3:</strong> Which of these is a benefit of trust funds?</p>
+      <button class="btn btn-outline-primary btn-sm">Protects assets & reduces taxes</button>
+      <button class="btn btn-outline-primary btn-sm">Forces overspending</button>
+      <button class="btn btn-outline-primary btn-sm">Eliminates savings</button>
+    </div>
+
+    <div class="mb-3">
+      <p><strong>Q4:</strong> What’s the key goal of retirement planning?</p>
+      <button class="btn btn-outline-primary btn-sm">Financial security & peace of mind</button>
+      <button class="btn btn-outline-primary btn-sm">Buying more liabilities</button>
+      <button class="btn btn-outline-primary btn-sm">Avoiding family support</button>
+    </div>
+  </div>
+
 `;
 });
 
@@ -2315,5 +2443,6 @@ document.querySelectorAll(".submit-quiz").forEach(btn => {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
